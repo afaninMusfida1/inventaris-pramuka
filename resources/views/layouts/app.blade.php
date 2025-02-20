@@ -22,7 +22,7 @@
                     <h2 class="text-xl font-bold mb-5">Menu</h2>
                     <ul class="space-y-2">
                         <li>
-                            <a href="{{ route('dashboard') }}" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                            <a href="{{ route('peminjaman.index') }}" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                                 <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11M9 21V3m3 0l6 6m0 0v12M9 10v11" />
                                 </svg>

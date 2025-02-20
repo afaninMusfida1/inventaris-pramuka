@@ -16,6 +16,7 @@ class KategoriResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     protected static ?string $navigationLabel = 'Kategori Barang';
+    protected static ?string $navigationGroup = 'Manajemen Barang';
 
     public static function form(Forms\Form $form): Forms\Form
     {

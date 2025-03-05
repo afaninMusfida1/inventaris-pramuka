@@ -17,6 +17,7 @@ class PeminjamanUser extends Model
         'jumlah',
         'peminjaman_id',
         'tanggal_peminjaman',
+        'tanggal_pengembalian',
         'status_peminjaman',
     ];
 
@@ -28,8 +29,9 @@ class PeminjamanUser extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id'); // Sesuaikan dengan nama kolom foreign key di tabel peminjaman
     }
+    
 
     public function peminjaman()
 {

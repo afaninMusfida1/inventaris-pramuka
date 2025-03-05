@@ -9,6 +9,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\DeleteAction;
 
 class KategoriResource extends Resource
 {
@@ -34,6 +36,10 @@ class KategoriResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama_kategori')->label('Nama Kategori'),
+            ])
+            ->actions([
+                EditAction::make(),  // Tombol Edit
+                DeleteAction::make(), // Tombol Delete
             ]);
     }
 
@@ -41,6 +47,8 @@ class KategoriResource extends Resource
     {
         return [
             'index' => Pages\ListKategori::route('/'),
+            'create' => Pages\CreateKategori::route('/create'),
+            'edit' => Pages\EditKategori::route('/{record}/edit'),
         ];
     }
 }

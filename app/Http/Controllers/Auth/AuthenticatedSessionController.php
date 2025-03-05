@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
 
     if (Auth::guard('web')->attempt($credentials)) {
         $request->session()->regenerate();
-        return redirect()->route('dashboard');
+        return redirect()->route('peminjaman.index');
     }
 
     return back()->withErrors([

@@ -31,11 +31,12 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            <x-dropdown-link href="#" 
+                                onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+
                         </form>
                     </x-slot>
                 </x-dropdown>
@@ -59,7 +60,14 @@
             <x-responsive-nav-link :href="route('peminjaman.index')" :active="request()->routeIs('peminjaman.index')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-nav-link :href="route('barang.tersedia')" :active="request()->routeIs('barang.tersedia')">
+                {{ __('Pinjam Barang') }}
+            </x-nav-link>
+            
         </div>
+
+        
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

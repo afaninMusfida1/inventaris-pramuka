@@ -25,6 +25,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/peminjaman', [PeminjamanUserController::class, 'index'])->name('peminjaman.index');
     Route::get('/peminjaman/create', [PeminjamanUserController::class, 'create'])->name('peminjaman.create');
     Route::post('/peminjaman', [PeminjamanUserController::class, 'store'])->name('peminjaman.store');
+    Route::get('/barang', [PeminjamanUserController::class, 'listBarang'])->name('barang.tersedia');
+    
 });
 
 require __DIR__.'/auth.php';
+ 

@@ -26,10 +26,14 @@ class BarangResource extends Resource
         return $form->schema([
             TextInput::make('nama_barang')->required()->label('Nama Barang'),
             Select::make('kategori_id')
-                ->label('Kategori')
-                ->relationship('kategori', 'nama_kategori') // Menggunakan relasi kategori
-                ->required(),
-            TextInput::make('jumlah_stok')->numeric()->label('Jumlah Stok')->required(),
+    ->label('Kategori')
+    ->options(\App\Models\Kategori::pluck('nama_kategori', 'id')->toArray()) 
+    ->searchable()
+    ->preload()
+    ->required(),
+
+        
+           TextInput::make('jumlah_stok')->numeric()->label('Jumlah Stok')->required(),
             Select::make('status')
                 ->options([
                     'tersedia' => 'Tersedia',
@@ -51,12 +55,9 @@ class BarangResource extends Resource
             TextColumn::make('status')->label('Status')->sortable(),
         ])
         ->filters([
-            SelectFilter::make('kategori')->options([
-                'pakaian' => 'Pakaian',
-                'alat_dapur' => 'Alat Dapur',
-                'alat_tulis' => 'Alat Tulis',
-                'lainnya' => 'Lainnya',
-            ]),
+            SelectFilter::make('kategori_id')
+            ->relationship('kategori', 'nama_kategori')
+            ->label('Kategori'),
         ])
         ->actions([
             EditAction::make(),

@@ -25,12 +25,16 @@
 <form action="{{ route('peminjaman.store') }}" method="POST" class="space-y-4">
     @csrf
     <div>
-        <label for="barang_id" class="block font-medium mb-1">Pilih Barang</label>
-        <select name="barang_id" id="barang_id" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
-            @foreach($barang as $item)
-                <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
-            @endforeach
-        </select>
+        <label for="barang">Pilih Barang:</label>
+<select name="barang_id" id="barang" class="w-full border p-2 rounded">
+    @foreach($barang as $item)
+        <option value="{{ $item->id }}" 
+            {{ isset($barangTerpilih) && $barangTerpilih->id == $item->id ? 'selected' : '' }}>
+            {{ $item->nama_barang }} - Stok: {{ $item->jumlah_stok }}
+        </option>
+    @endforeach
+</select>
+
     </div>
 
     <div class="form-group">
@@ -43,6 +47,13 @@
         <input type="date" name="tanggal_peminjaman" id="tanggal_peminjaman" 
             class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" required>
     </div>
+
+    <div>
+        <label for="tanggal_pengembalian" class="block font-medium mb-1">Tanggal Pengembalian</label>
+        <input type="date" name="tanggal_pengembalian" id="tanggal_pengembalian"
+               class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" required>
+    </div>
+    
 
     <button type="submit" 
         class="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600 transition">

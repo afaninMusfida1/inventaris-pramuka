@@ -43,6 +43,12 @@ class PeminjamanResource extends Resource
                     ->label('Tanggal Peminjaman')
                     ->sortable(),
 
+                    TextColumn::make('detailPeminjaman.tanggal_pengembalian')
+    ->label('Tanggal Pengembalian')
+    ->sortable()
+    ->getStateUsing(fn (Peminjaman $record) => $record->detailPeminjaman->tanggal_pengembalian ?? '-'),
+
+
                 BadgeColumn::make('status_peminjaman')
                     ->label('Status')
                     ->colors([

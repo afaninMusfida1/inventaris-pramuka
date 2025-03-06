@@ -6,21 +6,19 @@
 <div class="max-w-5xl mx-auto p-6">
     <div class="p-4 bg-white shadow rounded-lg mb-6">
         <h2 class="text-xl font-semibold mb-3 text-gray-800">Notifikasi</h2>
-        @if ($notifikasiPeminjaman->isNotEmpty())
-        <div class="p-4 mb-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
-            <h4 class="font-semibold">Pemberitahuan Pengembalian Barang</h4>
-            <ul class="list-disc list-inside">
-                @foreach ($notifikasiPeminjaman as $pinjam)
-                    <li>
-                        Barang <strong>{{ $pinjam->barang->nama_barang }}</strong> harus dikembalikan pada 
-                        <strong>{{ \Carbon\Carbon::parse($pinjam->tanggal_pengembalian)->format('d M Y') }}</strong>.
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    
+        @if (!empty($notifikasiPeminjaman) && $notifikasiPeminjaman->isNotEmpty())
+    <div class="p-4 mb-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
+        <h4 class="font-semibold">Pemberitahuan Pengembalian Barang</h4>
+        <ul class="list-disc list-inside">
+            @foreach ($notifikasiPeminjaman as $pinjam)
+                <li>
+                    Barang <strong>{{ $pinjam->barang->nama_barang }}</strong> harus dikembalikan pada 
+                    <strong>{{ \Carbon\Carbon::parse($pinjam->tanggal_pengembalian)->format('d M Y') }}</strong>.
+                </li>
+            @endforeach
+        </ul>
     </div>
+@endif
 
     <div class="flex justify-between items-center mb-4">
         <h1 class="text-2xl font-bold text-gray-800">Riwayat Peminjaman</h1>

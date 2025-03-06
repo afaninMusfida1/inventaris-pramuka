@@ -19,8 +19,8 @@ class PeminjamanUserController extends Controller
 
     // Ambil semua peminjaman user yang login
     $peminjamanUser = PeminjamanUser::where('user_id', $user->id)
-        ->with('barang') 
-        ->get();
+    ->with(['barang'])
+    ->get();
 
     // Ambil notifikasi peminjaman (Hari ini dan besok)
     $notifikasiPeminjaman = PeminjamanUser::where('user_id', $user->id)
@@ -118,25 +118,25 @@ public function listBarang()
     return view('user.barang_tersedia', compact('barang'));
 }
 
-public function notifikasiPeminjaman()
-{
-    $user = Auth::user();
-    $today = Carbon::today();
-    $tomorrow = Carbon::tomorrow();
+// public function notifikasiPeminjaman()
+// {
+//     $user = Auth::user();
+//     $today = Carbon::today();
+//     $tomorrow = Carbon::tomorrow();
 
-    // Ambil semua peminjaman user
-    $peminjamanUser = PeminjamanUser::where('user_id', $user->id)
-        ->with('barang') 
-        ->get();
+//     // Ambil semua peminjaman user
+//     $peminjamanUser = PeminjamanUser::where('user_id', $user->id)
+//         ->with('barang') 
+//         ->get();
 
-    // Ambil notifikasi peminjaman (Hari ini dan besok)
-    $notifikasiPeminjaman = PeminjamanUser::where('user_id', $user->id)
-        ->whereBetween('tanggal_pengembalian', [$today, $tomorrow])
-        ->where('status_peminjaman', 'disetujui')
-        ->with('barang')
-        ->get();
+//     // Ambil notifikasi peminjaman (Hari ini dan besok)
+//     $notifikasiPeminjaman = PeminjamanUser::where('user_id', $user->id)
+//         ->whereBetween('tanggal_pengembalian', [$today, $tomorrow])
+//         ->where('status_peminjaman', 'disetujui')
+//         ->with('barang')
+//         ->get();
 
-    return view('user.peminjaman', compact('peminjamanUser', 'notifikasiPeminjaman'));
-}
+//     return view('user.peminjaman', compact('peminjamanUser', 'notifikasiPeminjaman'));
+// }
  
 }

@@ -25,7 +25,7 @@ class PeminjamanUserController extends Controller
     // Ambil notifikasi peminjaman (Hari ini dan besok)
     $notifikasiPeminjaman = PeminjamanUser::where('user_id', $user->id)
         ->whereBetween('tanggal_pengembalian', [$today, $tomorrow]) // Hanya untuk hari ini dan besok
-        ->where('status_peminjaman', 'pending')
+        ->where('status_peminjaman', 'disetujui')
         ->with('barang')
         ->get();
 
@@ -132,7 +132,7 @@ public function notifikasiPeminjaman()
     // Ambil notifikasi peminjaman (Hari ini dan besok)
     $notifikasiPeminjaman = PeminjamanUser::where('user_id', $user->id)
         ->whereBetween('tanggal_pengembalian', [$today, $tomorrow])
-        ->where('status_peminjaman', 'pending')
+        ->where('status_peminjaman', 'disetujui')
         ->with('barang')
         ->get();
 

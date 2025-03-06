@@ -19,7 +19,7 @@
             <!-- Sidebar -->
             <aside class="w-64 min-h-screen bg-white shadow-md hidden md:block">
                 <div class="p-5">
-                    <h2 class="text-xl font-bold mb-5">Menu</h2>
+                    <h2 class="text-xl font-bold mb-5">Inventaris</h2>
                     <ul class="space-y-2">
                         <li>
                             <a href="{{ route('peminjaman.index') }}" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">

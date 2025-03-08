@@ -25,13 +25,14 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
         ->brandLogo(asset(env('APP_LOGO', '/storage/aipra.png'))) // Gunakan logo dari .env
-        ->brandLogoHeight('45px') // Sesuaikan ukuran
+        ->brandLogoHeight('45px') 
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                // 'primary' => Color::Amber,
+                'primary' => '#A47750',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -39,7 +40,7 @@ class AdminPanelProvider extends PanelProvider
             //     Pages\Dashboard::class,
             // ])
             ->pages([
-                Dashboard::class, // Gunakan dashboard custom
+                Dashboard::class, //dashboard custom
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([

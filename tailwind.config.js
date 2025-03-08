@@ -14,6 +14,20 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                primary: {
+                    50: '#f6f0eb',
+                    100: '#ebddd2',
+                    200: '#dfcab9',
+                    300: '#d2b69f',
+                    400: '#c5a386',
+                    500: '#A47750', // Warna utama
+                    600: '#87603f',
+                    700: '#6a4a30',
+                    800: '#4c3420',
+                    900: '#2e1e10',
+                },
+            },
         },
     },
 

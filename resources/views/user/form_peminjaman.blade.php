@@ -56,7 +56,7 @@
     
 
     <button type="submit" 
-        class="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600 transition">
+        class="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-[#A47750] transition">
         Ajukan Peminjaman
     </button>
 </form>

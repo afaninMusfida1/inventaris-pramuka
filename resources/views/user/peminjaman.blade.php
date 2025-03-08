@@ -22,7 +22,7 @@
 
     <div class="flex justify-between items-center mb-4">
         <h1 class="text-2xl font-bold text-gray-800">Riwayat Peminjaman</h1>
-        <a href="{{ route('barang.tersedia') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+        <a href="{{ route('barang.tersedia') }}" class="bg-[#A47750] text-white px-4 py-2 rounded-lg shadow hover:bg-[#b9895f] transition">
             + Ajukan Peminjaman
         </a>
     </div>

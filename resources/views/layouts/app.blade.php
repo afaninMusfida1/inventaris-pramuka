@@ -22,7 +22,7 @@
                     <img src="{{ asset('aipra.png') }}" alt="AIPRA" width="150" height="150" class="align-center ml-6 mb-14">
                     <ul class="space-y-2">
                         <li>
-                            <a href="{{ route('peminjaman.index') }}" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                            <a href="{{ route('peminjaman.index') }}" class="flex items-center px-4 py-2 bg-[#b9895f] text-white rounded-md hover:bg-[#a47750]">
                                 <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11M9 21V3m3 0l6 6m0 0v12M9 10v11" />
                                 </svg>
@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('barang.tersedia') }}" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                            <a href="{{ route('barang.tersedia') }}" class="flex items-center px-4 py-2 bg-[#b9895f] text-white rounded-md hover:bg-[#A47750]">
                                 <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6m3 6v-6m3 6v-6m-9 0h12" />
                                 </svg>

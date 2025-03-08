@@ -25,7 +25,7 @@
                             <td class="px-4 py-3 border-b">{{ $item->jumlah_stok }}</td>
                             <td class="px-4 py-3 border-b">
                                 <a href="{{ route('peminjaman.create', ['barang_id' => $item->id]) }}" 
-                                   class="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-600 transition">
+                                   class="bg-[#b9895f] text-white px-4 py-2 rounded-md shadow-md hover:bg-[#A47750]transition">
                                     Pinjam
                                 </a>
                             </td>

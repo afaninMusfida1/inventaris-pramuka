@@ -24,6 +24,8 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+        ->brandLogo(asset(env('APP_LOGO', '/storage/aipra.png'))) // Gunakan logo dari .env
+        ->brandLogoHeight('45px') // Sesuaikan ukuran
             ->default()
             ->id('admin')
             ->path('admin')

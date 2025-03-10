@@ -91,9 +91,30 @@ Action::make('tolak')
             ->update(['status_peminjaman' => 'ditolak']);
     })
     ->visible(fn (Peminjaman $record) => $record->status_peminjaman === 'pending'),
+
+    Action::make('dikembalikan')
+    ->label('Sudah Dikembalikan')
+    ->icon('heroicon-o-arrow-path')
+    ->color('green')
+    ->requiresConfirmation()
+    ->modalHeading('Konfirmasi Pengembalian')
+    ->modalDescription('Apakah barang ini sudah dikembalikan?')
+    ->modalButton('Ya, Barang Dikembalikan')
+    ->color('success')
+    ->action(function (Peminjaman $record) {
+        $record->update(['status_peminjaman' => 'dikembalikan']);
+
+        // Update status peminjaman_user terkait
+        \App\Models\PeminjamanUser::where('peminjaman_id', $record->id)
+            ->update(['status_peminjaman' => 'dikembalikan']);
+    })
+    ->visible(fn (Peminjaman $record) => $record->status_peminjaman === 'disetujui'),
+
             ]);
     }
+    
 
+    
     public static function getPages(): array
     {
         return [

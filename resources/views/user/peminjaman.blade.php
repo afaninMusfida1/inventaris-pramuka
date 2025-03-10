@@ -54,10 +54,21 @@
                             <td class="px-4 py-4 border-b">{{ $p->tanggal_pengembalian }}</td>
                             <td class="px-4 py-3 border-b">
                                 <span class="px-3 py-1 rounded-full text-sm font-medium 
-                                    {{ $p->status_peminjaman == 'disetujui' ? 'bg-green-200 text-green-800' : ($p->status_peminjaman == 'pending' ? 'bg-yellow-200 text-yellow-800' : 'bg-red-200 text-red-800') }}">
+                                    {{ $p->status_peminjaman == 'disetujui' ? 'bg-green-200 text-green-800' : 
+                                       ($p->status_peminjaman == 'pending' ? 'bg-yellow-200 text-yellow-800' : 
+                                       ($p->status_peminjaman == 'dikembalikan' ? 'bg-blue-200 text-blue-800' : 'bg-red-200 text-red-800')) }}">
                                     {{ ucfirst($p->status_peminjaman) }}
                                 </span>
                             </td>
+                            {{-- <td class="px-4 py-3 border-b">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium 
+                                    {{ $p->status_peminjaman == 'disetujui' ? 'bg-green-200 text-green-800' : 
+                                       ($p->status_peminjaman == 'pending' ? 'bg-yellow-200 text-yellow-800' : 
+                                       ($p->status_peminjaman == 'dikembalikan' ? 'bg-blue-200 text-blue-800' : 'bg-red-200 text-red-800')) }}">
+                                    {{ ucfirst($p->status_peminjaman) }}
+                                </span>
+                            </td> --}}
+                            
                         </tr>
                     @endforeach
                 @else

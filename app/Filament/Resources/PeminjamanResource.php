@@ -17,6 +17,8 @@ class PeminjamanResource extends Resource
     protected static ?string $model = Peminjaman::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Peminjaman';
+    protected static ?string $pluralLabel = 'Peminjaman';
+    protected static ?string $slug = 'Peminjaman';
     protected static ?string $navigationGroup = 'Manajemen Peminjaman';
 
     public static function table(Table $table): Table

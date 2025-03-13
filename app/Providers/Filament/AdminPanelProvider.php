@@ -47,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
                 // Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
                 \App\Filament\Admin\Widgets\StatsOverview::class,
+                \App\Filament\Admin\Widgets\PeminjamanChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,
